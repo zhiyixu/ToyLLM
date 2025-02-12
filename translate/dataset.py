@@ -1,9 +1,14 @@
 import torchtext
-torchtext.disable_torchtext_deprecation_warning()
+# torchtext.disable_torchtext_deprecation_warning()
 from torchtext.data.utils import get_tokenizer
 from torchtext.vocab import build_vocab_from_iterator
 from torchtext.datasets import multi30k, Multi30k
 import warnings
+
+
+# multi30k.URL["train"] = "https://raw.githubusercontent.com/neychev/small_DL_repo/master/datasets/Multi30k/training.tar.gz"
+# multi30k.URL["valid"] = "https://raw.githubusercontent.com/neychev/small_DL_repo/master/datasets/Multi30k/validation.tar.gz"
+# multi30k.URL["test"] = "https://raw.githubusercontent.com/neychev/small_DL_repo/master/datasets/Multi30k/testing.tar.gz"
 
 train_dataset = list(Multi30k(split="train", language_pair=('de','en')))
 
