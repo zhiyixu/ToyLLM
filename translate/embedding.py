@@ -29,7 +29,7 @@ class EmbeddingWithPosition(nn.Module):
 if __name__ == "__main__":
     emb = EmbeddingWithPosition(len(de_vocab), 128)
 
-    de_tokens, de_ids = de_process(train_dataset[0][0])
+    de_tokens, de_ids = de_process(train_dataset[1][0])
 
     print(de_tokens, de_ids)
 
