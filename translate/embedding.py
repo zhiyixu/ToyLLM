@@ -22,6 +22,7 @@ class EmbeddingWithPosition(nn.Module):
 
     def forward(self, x):
         x = self.seq_emb(x)
+        print("shape of x: ",x.shape)
         x += self.pos_encoding.unsqueeze(0)[:, :x.size()[1],:]
         return self.dropout(x)
 
