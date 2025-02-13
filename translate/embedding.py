@@ -22,6 +22,7 @@ class EmbeddingWithPosition(nn.Module):
 
     def forward(self, x):
         x = self.seq_emb(x)
+        print("shape of x: ",x.shape)
         x += self.pos_encoding.unsqueeze(0)[:, :x.size()[1],:]
         return self.dropout(x)
 
@@ -29,7 +30,7 @@ class EmbeddingWithPosition(nn.Module):
 if __name__ == "__main__":
     emb = EmbeddingWithPosition(len(de_vocab), 128)
 
-    de_tokens, de_ids = de_process(train_dataset[0][0])
+    de_tokens, de_ids = de_process(train_dataset[1][0])
 
     print(de_tokens, de_ids)
 
